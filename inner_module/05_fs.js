@@ -8,3 +8,13 @@ fs.writeFile('./sample.txt', data, 'latin1', (err) => {
     }
     console.log('파일쓰는 것 완료하였어요.');
 });
+
+
+
+
+fs.readFile('./sample.txt', 'utf8', (err, result) => {
+    if (err) {
+      throw err;
+    }
+    console.log(result);
+})
