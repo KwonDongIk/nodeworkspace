@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const { query } = require('./mapper/emp-map');
+const { query } = require('./mapper/emp-map.js');
+
 
 app.listen(5000, () => {
   console.log('서버 포트 5000번');
@@ -13,14 +14,33 @@ app.get('/emps', (req, res) => {
   res.send(list); // 응답
 });
 
-// 등록 : POST + '/emps'
-app.post();
+/*
+   content-type | express
+   Get + QueryString | request.query
+   Post + QueryString | request.query
+   JSON | request.body
+   경로에 값을 전달 | requset.params
+*/
 
-// 수정 : PUT + '/emps/100'
-app.put();
+// 미들웨어 등록
+// application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: false}));
+// application/json
+app.use(express.json());
 
-// 삭제 : DELETE + '/emps/100' << 숨기는거..
-app.delete();
+const empRouter = require('./router/emp_router.js');
+app.use('/', empRouter);
 
+app.use(function(err, req, res, next){
+  //res.status(500).json({statusCode : res.statusCode, errMessage : err.errmessage});
 
-// 100이 데이터라면..
+});
+
+app.get('/error', (req, res, next) => {
+  next(new Error('Process Fail, check data'));
+});
+
+// 정적파일(css, html, js, image 등) 처리
+//app.use(express.static('./soccerplayer'));
+
+app.use('/img', express.static('./soccerplayer'));
