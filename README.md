@@ -49,7 +49,22 @@
     * 저장소 생성
     * 파일 업로드 처리
 
-  * mySql server
+  * mysql server
     * mapper = persistence
     * router = presentation
     * service = business
+
+  * mariaDB
+    * command prompt mariaDB
+    * MariaDB Server 11.4.5
+    * DATATYPE
+      * 정수
+        * int
+      * 실수
+        * float / double
+      * 문자
+        * char(1~255) / varchar(1~16383)
+      * 날짜
+        * datetime / data / time
+          * datetime
+            * YYYY-MM-DD HH:MM:SS

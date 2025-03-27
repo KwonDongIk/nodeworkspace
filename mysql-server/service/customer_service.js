@@ -1,5 +1,10 @@
+const mariaDB = require('../mapper/mapper.js');
+
 // 전체조회
-const findAll = () => {};
+const findAll = async () => {
+  let list = await mariaDB.query('selectAll');
+  return list;
+};
 
 // 단건조회
 const findById = () => {};

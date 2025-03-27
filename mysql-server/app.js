@@ -1,5 +1,8 @@
+require('dotenv').config({path : './mapper/dbConfig.env'});
+console.log(process.env);
 const express = require('express');
 const app = express();
+const custRouter = require('./router/customer_router.js');
 
 // 미들웨어 등록
 // application/x-www-urlencoded
@@ -16,3 +19,5 @@ app.listen(3000, () => {
 app.get('/', (req, res) => {
   res.send('welcome');
 });
+
+app.use('/', custRouter);

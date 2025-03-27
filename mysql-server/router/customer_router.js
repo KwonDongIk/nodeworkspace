@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
+const customerService = require('../service/customer_service.js');
 
 // customer
 // 전체조회 : GET + '/customers'
-router.get('/customers', (req, res) => {
-
+router.get('/customers', async (req, res) => {
+  let custList = await customerService.findAll();
+  res.send(custList);
 });
 
 // 단건조회 : GET + '/customers/:id'
