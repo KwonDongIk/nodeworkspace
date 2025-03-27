@@ -1,5 +1,5 @@
 <div align = center>
-  <img src="https://capsule-render.vercel.app/api?type=Venom&color=gradient&height=300&section=header&text=Yedam%20Nodejs%20learning&fontSize=100&animation=fadeIn&fontAlignY=38&desc=Yedam%20Fullstack%20class&descAlignY=60&descAlign=82"/>
+  <img src="https://capsule-render.vercel.app/api?type=Venom&color=gradient&height=390&section=header&text=Nodejs%20learning&fontSize=100&animation=fadeIn&fontAlignY=37&desc=Yedam%20Fullstack%20class&descAlignY=60&descAlign=82"/>
 </div>
 <hr>
 </div>
@@ -48,3 +48,8 @@
   * multer
     * 저장소 생성
     * 파일 업로드 처리
+
+  * mySql server
+    * mapper = persistence
+    * router = presentation
+    * service = business
