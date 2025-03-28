@@ -12,7 +12,11 @@ const connectionPool = mariaDB.createPool({
   // 선택
   permitSetMultiParamEntries : true,
   insertIdAsNumber : true,
-  bigIntAsNumber : true
+  bigIntAsNumber : true,
+  logger : {
+    query : (msg) => console.log(msg),
+    error : (err) => console.log(err),
+  }
 });
 
 let testSql = `SELECT * FROM customers`;
@@ -22,7 +26,7 @@ const query = (alias, values) => {
 
   return new Promise((resolve, reject) => {
     let executeSql = sqlList[alias];
-    console.log(`sql : ${executeSql}`);
+    //console.log(`sql : ${executeSql}`);
     connectionPool.query(executeSql, values, (err, result) => {
       if (err) {
         reject({err});
