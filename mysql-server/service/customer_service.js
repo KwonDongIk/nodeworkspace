@@ -39,7 +39,8 @@ const modifyCustomerInfo = async (custInfo, custId) => {
 
 // 삭제
 const removeCustomerInfo = async (custId) => {
-  let result = (await mariaDB.query ('deleteInfo', custId))[0];
+  let result = (await mariaDB.query ('deleteInfo', custId));
+  console.log(result);
   return result;
 };
 

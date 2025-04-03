@@ -1,5 +1,5 @@
 <div align = center>
-  <img src="https://capsule-render.vercel.app/api?type=Venom&color=gradient&height=390&section=header&text=Nodejs%20learning&fontSize=100&animation=fadeIn&fontAlignY=37&desc=Yedam%20Fullstack%20class&descAlignY=60&descAlign=82"/>
+  <img src="https://capsule-render.vercel.app/api?type=Venom&color=gradient&height=390&section=header&text=Node%20js%20learning&fontSize=100&animation=fadeIn&fontAlignY=37&desc=Yedam%20Fullstack%20class&descAlignY=60&descAlign=84"/>
 </div>
 <hr>
 </div>
@@ -24,17 +24,20 @@
     - key=value&key=value&...
     - QueryString(질의문자열)
     - METHOD : 제한없음
+    - => SEARCHPARAMS
 
     2) application/json
     - { "key" : "value", ...}
       or [ {}, {}]
     - JSON(Javascript Object Notation)
     - METHOD : POST, PUT
+    - => JSON
 
     3) multipart/form-data
     - 미디어파일 전체
     - METHOD : POST, PUT
     - 특징> 별도 인코딩 없음
+    - => FORMDATA
 
   * Error code
     * 400 Bad Request

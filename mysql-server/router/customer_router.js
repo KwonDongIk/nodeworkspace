@@ -34,9 +34,9 @@ router.put('/customers/:id', async (req, res) => {
 });
 
 // 삭제 : DELETE + '/customers/:id'
-router.delete('/customers/:id', (req, res) => {
+router.delete('/customers/:id', async (req, res) => {
   let custId = req.params.id;
-  let result = customerService.removeCustomerInfo(custId);
+  let result = await customerService.removeCustomerInfo(custId);
   res.send(result);
   
 });
